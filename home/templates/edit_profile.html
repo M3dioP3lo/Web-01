@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Page {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<form action="/edit_profile/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+    <div class="container mt-3">
+   {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </div>
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert('Tu perfil ha sido actualizado exitosamente.');
+    document.location = '/profile/';
+    {% endif %}
+</script>
+{% endblock %}

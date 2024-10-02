@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Register Page {% endblock %}
+{% block registeractive %} active {% endblock registeractive %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <div class="mb-3">
+            <label for="username" class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="mb-3">
+            <label for="first_name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password1" name="password1">
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="password2" name="password2">
+        </div>
+        <button type="submit" class="btn btn-primary">Validar</button>
+    </div>
+</form>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
