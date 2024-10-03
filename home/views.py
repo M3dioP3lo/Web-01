@@ -131,15 +131,15 @@ def login_view(request):
 
     return render(request, "login.html")
 
-'''def logout(request):
+def logout(request):
     auth_logout(request)  # Cierra la sesión del usuario
-    messages.success(request, "Cerró sesión exitosamente")
-    return render(request, 'logout.html')  # Renderiza la página logout.html'''
-
+    messages.success(request, "Cerró sesión exitosamente.")
+    return redirect('login') # Cierra la sesión del usuario
+    
 def logout_and_redirect(request):
     logout(request)
     messages.success(request, "Cerraste sesión exitosamente.")
-    return redirect('logout.html')  # Cambia esto por la URL a la que quieras redirigir
+    return redirect('login')  # Cambia esto por la URL a la que quieras redirigir
 
 '''def logout_and_redirect(request):
     logout(request)

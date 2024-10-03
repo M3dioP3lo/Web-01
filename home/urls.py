@@ -22,7 +22,7 @@ urlpatterns = [
 #Autenticación de usuario
     path("register/", views.register, name="register"),
     path('login/', views.login_view, name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Ruta para el cierre de sesión
-    path('logout_redirect/', views.logout_and_redirect, name='logout_redirect'), #Antes --->path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', views.logout, name='logout'), #Ruta para el cierre de sesión de Usuario
+    #path('logout_redirect/', views.logout_and_redirect, name='logout_redirect'), #Antes --->path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
 ]

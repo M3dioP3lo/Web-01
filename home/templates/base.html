@@ -103,7 +103,11 @@
                 <a class="nav-link {% block profileactive %} {% endblock profileactive %}" href="/profile/">Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Salir</a>
+                <!-- Aquí antes estaba esto/<a class="nav-link" href="{% url 'logout' %}">Salir</a> -->
+                 <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+                   {% csrf_token %}
+                   <button type="submit" class="nav-link btn btn-link">Cerra Sesión</button>
+                 </form>
               </li>
               {% else %}
               <li class="nav-item">
@@ -138,5 +142,10 @@
 
     {% block js %} 
     {% endblock %}
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+      <div class="container text-center">
+          <p>&copy; 2024 Blog de Noticias. Todos los derechos reservados.</p>
+      </div>
+  </footer>
   </body>
 </html>

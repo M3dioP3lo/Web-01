@@ -16,9 +16,12 @@
 .profile-img{
     text-align: center;
 }
-
+<!--Aquí se modificó la vista de al foto del Perfil xq antes era redonda-->
 .profile-img img {
-    border-radius: 50%;
+    border-radius: 15px;  /* Ajusta este valor según lo redondeado que quieras las esquinas */
+    width: 200px;  /* Ancho fijo para mantener la forma cuadrada */
+    height: 200px; /* Alto fijo igual al ancho para mantener la forma cuadrada */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
 }
 
 .profile-tab p {
